@@ -34,11 +34,6 @@ RUN wget "https://repo1.maven.org/maven2/io/gatling/highcharts/gatling-charts-hi
 
 WORKDIR $GATLING_BIN
 
-ADD src/gatling/resources/* $GATLING_CONF/
-ADD src/gatling/scala/com.meek.ventures* $GATLING_SIMULATION/
-
-ADD ./*.sh $GATLING_BIN/
-
 WORKDIR $GATLING_BIN
 
 ENTRYPOINT ["gatling.sh"]
