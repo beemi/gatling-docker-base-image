@@ -10,8 +10,8 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
-     outputs:
-       version: ${{ steps.store.outputs.version }}
+    outputs:
+      version: ${{ steps.store.outputs.version }}
     permissions:
       contents: read
       packages: write
