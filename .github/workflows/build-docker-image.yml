@@ -45,7 +45,6 @@ jobs:
         with:
           context: .
           push: ${{ github.event_name != 'pull_request' }}
-          tags: ${{ steps.meta.outputs.tags }}
           tags: |
              ${{ env.REGISTRY }}/${{ github.repository }}:${{ steps.release.outputs.version }}
              ${{ env.REGISTRY }}/${{ github.repository }}:latest
