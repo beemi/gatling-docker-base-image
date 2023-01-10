@@ -2,7 +2,7 @@ FROM alpine:latest
 
 MAINTAINER Raja Beemi <beemi.raja@gmail.com>
 
-ARG GATLING_VERSION="3.7.3"
+ARG GATLING_VERSION="3.9.0"
 
 ENV SIMULATION_NAME $SIMULATION_NAME
 
