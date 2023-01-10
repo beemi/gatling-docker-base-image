@@ -26,14 +26,14 @@ jobs:
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
 
-      - name: Create release
-        id: release
-        uses: rymndhng/release-on-push-action@v0.23.1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          bump_version_scheme: minor
-          use_github_release_notes: true
+#       - name: Create release
+#         id: release
+#         uses: rymndhng/release-on-push-action@v0.23.1
+#         env:
+#           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#         with:
+#           bump_version_scheme: minor
+#           use_github_release_notes: true
 
       - name: Store release version
         id: store
@@ -54,5 +54,6 @@ jobs:
           tags: |
              ${{ env.REGISTRY }}/${{ github.repository }}:${{ steps.release.outputs.version }}
              ${{ env.REGISTRY }}/${{ github.repository }}:latest
+             ${{ env.REGISTRY }}/${{ github.repository }}:1.0.${{github.run_number}}
           labels: |
             ${{ steps.meta.outputs.labels }}
